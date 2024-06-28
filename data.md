@@ -1,0 +1,1 @@
+docker run -v "$(pwd)/data.json:/app/data.json" json-test
