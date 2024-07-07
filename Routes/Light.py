@@ -19,7 +19,7 @@ def greet(request: Request):
 @require_token
 def getStatus(request: Request):
  
-    pathToJson = os.path.join(os.path.dirname(__file__), '..', 'Json', 'Light.json')  # This goes to the ./Routes, then the (..) goes back one and then switches to Json and then Light.json; Then makes it one string    
+    pathToJson = os.path.join(os.path.dirname(__file__), '..', 'Json', JSON_FILE_NAME)  # This goes to the ./Routes, then the (..) goes back one and then switches to Json and then Light.json; Then makes it one string    
     status = read_data(pathToJson)
 
     return status

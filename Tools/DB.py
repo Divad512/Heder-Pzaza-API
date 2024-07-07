@@ -12,6 +12,7 @@ def write_data(DB_NAME, data):
     try:
         with open(DB_NAME, "w") as f:
             json.dump(data, f, indent=4)
+            
     except FileNotFoundError:
         return {"message": "File not found"}
     

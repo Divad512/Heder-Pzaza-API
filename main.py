@@ -9,16 +9,16 @@ app = FastAPI()
 
 from Routes.Light import roomLight
 from Routes.Ac import Ac
+from Routes.Alarm import Alarm
 
 
 app.include_router(prefix='/light', router=roomLight)
 app.include_router(prefix='/ac', router=Ac)
-
+app.include_router(prefix='/alarm', router=Alarm)
 
 @app.get('/')
 async def mainPage():
-
-    return 'working'
+    return 'hola'
 
 
 @app.get("/time")
