@@ -7,6 +7,11 @@ __pycache__/
 *.zip
 *.tar
 
+# So you don't see the token :) (im to lazy for env files and shit)
+Auth.py 
+private.py 
+# okay so i did add the "env" file. flip off
+
 # C extensions
 *.so
 

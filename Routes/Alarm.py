@@ -30,7 +30,6 @@ def change(request: Request, armed: bool = None, working: bool = None):
     
     if armed == None and working == None:
         raise HTTPException(status_code=400, detail={'Error': 'Please enter an armed update or a working update', 'Usage': '/change?armed=true | /change?working=true'})
-        #return {'Error': 'Please enter an armed update or a working update', 'Usage': '/change?armed=true | /change?working=true'}
 
     pathToJson = os.path.join(os.path.dirname(__file__), '..', 'Json', JSON_FILE_NAME)  # This goes to the ./Routes, then the (..) goes back one and then switches to Json and then Alarm.json; Then makes it one string    
     status = read_data(pathToJson)
