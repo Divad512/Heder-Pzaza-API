@@ -1,11 +1,23 @@
 # main.py
 
 from fastapi import FastAPI, HTTPException, Request
+from starlette.middleware.cors import CORSMiddleware
+
 import json, os
 import datetime
 from Tools.DB import read_data, write_data
 
 app = FastAPI()
+
+
+# To add CORS so I can use fetch() to use this api
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 from Routes.Light import roomLight
 from Routes.Ac import Ac
